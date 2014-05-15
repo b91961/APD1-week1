@@ -7,16 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EmployeeCustomClass.h"
 
 @interface ClockInViewController : UIViewController
 {
     IBOutlet UILabel *timeLabel;
     IBOutlet UILabel *dateLabel;
     IBOutlet UIView *timeView;
+    IBOutlet UITextField *InUserField;
     IBOutlet UITextField *InPinField;
     IBOutlet UIButton *clockInButton;
     UIAlertView *alert;
+    
+    NSDictionary *loginDictionary;
 }
+
+@property (nonatomic, strong)EmployeeCustomClass *employeeInfo;
 
 -(IBAction)onClockIn:(id)sender;
 

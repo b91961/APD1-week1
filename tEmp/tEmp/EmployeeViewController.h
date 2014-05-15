@@ -7,12 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EmployeeCustomClass.h"
 
 @interface EmployeeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
+    EmployeeCustomClass *employeeInfo;
+    
     IBOutlet UITableView *myTableView;
     NSMutableArray *empArray;
+    NSMutableArray *usernameArray;
+    NSMutableArray *pinArray;
+    NSMutableArray *locUsernameArray;
 }
+@property (nonatomic, strong)NSMutableArray *usernameArray;
+@property (nonatomic, strong)NSMutableArray *pinArray;
 
 -(IBAction)onClick:(id)sender;
 

@@ -7,15 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EmployeeCustomClass.h"
 
 @interface ClockOutViewController : UIViewController
 {
     IBOutlet UILabel *timeLabel;
     IBOutlet UILabel *dateLabel;
     IBOutlet UIView *timeView;
+    IBOutlet UITextField *outUserField;
     IBOutlet UITextField *outPinField;
     IBOutlet UIButton *clockOutButton;
     UIAlertView *alert;
+    
+    NSDictionary *logoutDictionary;
 }
 
 -(IBAction)onClockOut:(id)sender;

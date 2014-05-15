@@ -34,7 +34,9 @@
     timeView.layer.borderWidth = 3.0f;
     
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    logoutDictionary = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:@"1234", @"5678", @"9012", @"3456", @"7890", @"2345", @"6789", @"0123", @"4567", @"8901", @"0987", @"6543", @"2109", @"8765", @"4321", @"1111", @"2222", @"3333", @"4444", @"5555", nil]
+                                                     forKeys:[NSArray arrayWithObjects:@"jamal", @"jonj", @"jons", @"connor", @"zach", @"kenny", @"justin", @"miley", @"brad", @"johnny", @"marshall", @"jude", @"shawn", @"jennifer", @"matt", @"jonst", @"adam", @"jim", @"ron", @"bruce", nil]];
 }
 
 -(void)updateTime
@@ -85,15 +87,30 @@
 
 -(IBAction)onClockOut:(id)sender
 {
-    //set alert to give description of the app
-    alert = [[UIAlertView alloc]
-             initWithTitle:nil
-             message:@"You have successfully Clocked Out."
-             delegate:nil
-             cancelButtonTitle:@"Close"
-             otherButtonTitles:nil];
-    [alert show];
-    
+    if ([[logoutDictionary objectForKey:outUserField.text]isEqualToString:outPinField.text])
+    {
+        NSString *mySuccess = [NSString stringWithFormat:@"%@ has successfully Clocked Out.", outUserField.text];
+        
+        alert = [[UIAlertView alloc]
+                 initWithTitle:@"Successful Clock Out"
+                 message:mySuccess
+                 delegate:nil
+                 cancelButtonTitle:@"Close"
+                 otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+        NSString *myError = [NSString stringWithFormat:@"%@ incorrect Clock Out attempt.", outUserField.text];
+        
+        alert = [[UIAlertView alloc]
+                 initWithTitle:@"Incorrect Clock Out"
+                 message:myError
+                 delegate:nil
+                 cancelButtonTitle:@"Close"
+                 otherButtonTitles:nil];
+        [alert show];
+    }
     [self dismissViewControllerAnimated:TRUE completion:nil];
 }
 

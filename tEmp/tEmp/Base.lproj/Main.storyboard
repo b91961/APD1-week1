@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CZ4-MO-1fc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CZ4-MO-1fc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -25,6 +25,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="onIn:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="OSV-7N-cAJ"/>
                                     <segue destination="rcP-Pu-o1k" kind="modal" id="X1s-1D-azK"/>
                                 </connections>
                             </button>
@@ -36,6 +37,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="onOut:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="AX4-T7-Day"/>
                                     <segue destination="HoV-lA-D1h" kind="modal" id="IUH-Ft-JZ3"/>
                                 </connections>
                             </button>
@@ -68,8 +70,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ready For Pin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YH-vQ-FfC">
-                                        <rect key="frame" x="86" y="84" width="109" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ready..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YH-vQ-FfC">
+                                        <rect key="frame" x="15" y="84" width="245" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -109,6 +111,7 @@
                     <tabBarItem key="tabBarItem" title="First" image="first" id="u1e-5L-l1D"/>
                     <connections>
                         <outlet property="dateLabel" destination="4KK-Wz-Ebg" id="jmv-TQ-T7J"/>
+                        <outlet property="statusLabel" destination="3YH-vQ-FfC" id="E8H-RM-FG6"/>
                         <outlet property="timeLabel" destination="MVe-Lz-gsQ" id="26o-Rs-nIw"/>
                         <outlet property="timeView" destination="jQT-CE-niA" id="G8Y-8Z-7lA"/>
                     </connections>
@@ -182,7 +185,7 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="myTableView" destination="80E-GL-wsP" id="KVa-HT-epE"/>
+                        <outlet property="_myTableView" destination="80E-GL-wsP" id="TiK-Z8-Szu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvV-5g-6Fb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -286,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0QJ-FO-at0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="1210"/>
+            <point key="canvasLocation" x="1104" y="526"/>
         </scene>
         <!--Timecard View Controller-->
         <scene sceneID="A9y-jA-BBu">
@@ -340,8 +343,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8:59" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nr3-Vq-Vyp">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9:15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbV-mF-Q3p">
                                 <rect key="frame" x="204" y="138" width="52" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8:59" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nr3-Vq-Vyp">
+                                <rect key="frame" x="204" y="494" width="52" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="highlightedColor"/>
@@ -358,14 +367,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCH-DA-iIa">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9:12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCH-DA-iIa">
                                 <rect key="frame" x="204" y="263" width="52" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8:57" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9s-ae-Ho3">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8:45" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNP-35-WUW">
                                 <rect key="frame" x="204" y="281" width="52" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8:53" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxf-0l-nUu">
+                                <rect key="frame" x="204" y="547" width="52" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8:57" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9s-ae-Ho3">
+                                <rect key="frame" x="204" y="476" width="52" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8:56" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdA-5y-Bfi">
+                                <rect key="frame" x="204" y="423" width="52" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="highlightedColor"/>
@@ -382,6 +409,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9:02" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNd-gf-HwJ">
+                                <rect key="frame" x="204" y="404" width="52" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jamal Moubarak" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RvC-D3-jfV">
                                 <rect key="frame" x="6" y="76" width="39" height="279"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -393,14 +426,28 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="friInLabel" destination="KAX-0i-yUU" id="I0C-qJ-21n"/>
+                        <outlet property="friOutLabel" destination="zNd-gf-HwJ" id="5Ln-fg-160"/>
+                        <outlet property="monInLabel" destination="h0n-Le-VTu" id="lxF-p2-cuk"/>
+                        <outlet property="monOutLabel" destination="zlX-kx-xmt" id="9uf-cM-NkR"/>
                         <outlet property="nameLabel" destination="RvC-D3-jfV" id="XGH-kj-Oha"/>
+                        <outlet property="satInLabel" destination="KdA-5y-Bfi" id="nD2-bn-oz3"/>
+                        <outlet property="satOutLabel" destination="x9s-ae-Ho3" id="dsn-s0-aYu"/>
+                        <outlet property="sunInLabel" destination="Nr3-Vq-Vyp" id="DCL-Rl-zms"/>
+                        <outlet property="sunOutLabel" destination="Dxf-0l-nUu" id="tao-0e-9z5"/>
+                        <outlet property="thursInLabel" destination="fNP-35-WUW" id="l0h-cO-7UD"/>
+                        <outlet property="thursOutLabel" destination="I5G-gt-XrT" id="m0C-sy-1gd"/>
                         <outlet property="timecard" destination="JYs-G9-N9M" id="3LW-xL-h06"/>
+                        <outlet property="tuesInLabel" destination="nbV-mF-Q3p" id="2R3-Uf-x2o"/>
+                        <outlet property="tuesOutLabel" destination="Xy4-41-6m7" id="uFe-N7-ESY"/>
+                        <outlet property="wedInLabel" destination="pdr-ju-TXU" id="o7v-EH-wCy"/>
+                        <outlet property="wedOutLabel" destination="vCH-DA-iIa" id="BO5-tr-3qP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3iO-U9-C5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="cbO-WD-MLy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1104" y="526"/>
+            <point key="canvasLocation" x="1598" y="-492"/>
         </scene>
         <!--Clock Out View Controller-->
         <scene sceneID="I3v-m2-CSa">
@@ -443,8 +490,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ready For Pin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMK-P0-MP7">
-                                        <rect key="frame" x="86" y="84" width="109" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ready For Pin..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMK-P0-MP7">
+                                        <rect key="frame" x="20" y="84" width="240" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -475,6 +522,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onClockOut:" destination="HoV-lA-D1h" eventType="touchUpInside" id="zli-EH-8Me"/>
+                                    <segue destination="i6O-9N-lnz" kind="modal" id="iad-wf-2KC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7J2-me-sSp">
@@ -495,6 +543,7 @@
                         <outlet property="dateLabel" destination="ZjL-PD-Rd0" id="rwE-Eb-NSX"/>
                         <outlet property="outPinField" destination="bMS-uE-w7K" id="sxq-XM-cRH"/>
                         <outlet property="outUserField" destination="3Z1-uW-Bx1" id="hjT-vE-YYh"/>
+                        <outlet property="statusLabel" destination="cMK-P0-MP7" id="V3g-RV-fAW"/>
                         <outlet property="timeLabel" destination="5Hl-0F-KQN" id="VFo-8P-kJz"/>
                         <outlet property="timeView" destination="2Rc-iT-TLH" id="ods-Yh-xKb"/>
                     </connections>
@@ -557,8 +606,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ready For Pin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Muh-N2-wEO">
-                                        <rect key="frame" x="86" y="83" width="109" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ready For Pin..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Muh-N2-wEO">
+                                        <rect key="frame" x="20" y="83" width="240" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -578,6 +627,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onClockIn:" destination="rcP-Pu-o1k" eventType="touchUpInside" id="4aK-eF-IJN"/>
+                                    <segue destination="i6O-9N-lnz" kind="modal" id="N1M-oi-VV7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gj-ZE-EiM">
@@ -598,6 +648,7 @@
                         <outlet property="InUserField" destination="osd-R3-KDN" id="A2t-Rf-KJ3"/>
                         <outlet property="clockInButton" destination="5vc-1Y-Ewz" id="diR-Pr-Y6M"/>
                         <outlet property="dateLabel" destination="Og9-CM-gt0" id="ByT-ea-u8j"/>
+                        <outlet property="statusLabel" destination="Muh-N2-wEO" id="7uM-NI-AoJ"/>
                         <outlet property="timeLabel" destination="PET-2r-yD3" id="Mg1-ju-cN5"/>
                         <outlet property="timeView" destination="b70-l4-TRq" id="xGu-0R-Tta"/>
                     </connections>
@@ -617,4 +668,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="N1M-oi-VV7"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -57,6 +57,21 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(IBAction)onIn:(id)sender
+{
+    statusLabel.text = @"Remember to Clock Out...";
+    statusLabel.textColor = [UIColor redColor];
+    statusLabel.shadowColor = nil;
+}
+
+-(IBAction)onOut:(id)sender
+{
+    statusLabel.text = @"Please Clock In...";
+    statusLabel.textColor = [UIColor greenColor];
+    statusLabel.shadowColor = nil;
+}
+
 // Unwind Button
 -(IBAction)done:(UIStoryboardSegue*)segue
 {

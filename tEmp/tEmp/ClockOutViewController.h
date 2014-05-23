@@ -13,6 +13,7 @@
 {
     IBOutlet UILabel *timeLabel;
     IBOutlet UILabel *dateLabel;
+    IBOutlet UILabel *statusLabel;
     IBOutlet UIView *timeView;
     IBOutlet UITextField *outUserField;
     IBOutlet UITextField *outPinField;

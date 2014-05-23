@@ -13,6 +13,10 @@
     IBOutlet UILabel *timeLabel;
     IBOutlet UILabel *dateLabel;
     IBOutlet UIView *timeView;
+    IBOutlet UILabel *statusLabel;
 }
+
+-(IBAction)onOut:(id)sender;
+-(IBAction)onIn:(id)sender;
 
 @end

@@ -30,6 +30,7 @@
 		5720167F191C8C1D0086C623 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5720167E191C8C1D0086C623 /* CustomCell.m */; };
 		57201682191C8D3E0086C623 /* EmpDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57201681191C8D3E0086C623 /* EmpDetailViewController.m */; };
 		57201685191C8DD10086C623 /* EmployeeCustomClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 57201684191C8DD10086C623 /* EmployeeCustomClass.m */; };
+		57CE2D29192EB29000331BCD /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CE2D28192EB29000331BCD /* DataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		57201681191C8D3E0086C623 /* EmpDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmpDetailViewController.m; sourceTree = "<group>"; };
 		57201683191C8DD10086C623 /* EmployeeCustomClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeCustomClass.h; sourceTree = "<group>"; };
 		57201684191C8DD10086C623 /* EmployeeCustomClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeCustomClass.m; sourceTree = "<group>"; };
+		57CE2D27192EB29000331BCD /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		57CE2D28192EB29000331BCD /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,8 @@
 				5720167E191C8C1D0086C623 /* CustomCell.m */,
 				57201683191C8DD10086C623 /* EmployeeCustomClass.h */,
 				57201684191C8DD10086C623 /* EmployeeCustomClass.m */,
+				57CE2D27192EB29000331BCD /* DataManager.h */,
+				57CE2D28192EB29000331BCD /* DataManager.m */,
 			);
 			path = tEmp;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				5720164E191BFEFE0086C623 /* FirstViewController.m in Sources */,
 				57201644191BFEFD0086C623 /* main.m in Sources */,
 				57201677191C42140086C623 /* TimecardViewController.m in Sources */,
+				57CE2D29192EB29000331BCD /* DataManager.m in Sources */,
 				57201685191C8DD10086C623 /* EmployeeCustomClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,6 +525,7 @@
 				5720166B191BFEFE0086C623 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5720166C191BFEFE0086C623 /* Build configuration list for PBXNativeTarget "tEmpTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +534,7 @@
 				5720166E191BFEFE0086C623 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

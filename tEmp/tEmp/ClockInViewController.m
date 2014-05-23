@@ -91,7 +91,7 @@
                  otherButtonTitles:nil];
         [alert show];
     }
-    [self dismissViewControllerAnimated:TRUE completion:nil];
+    //[self dismissViewControllerAnimated:TRUE completion:nil];
 }
 
 @end

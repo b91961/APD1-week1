@@ -28,6 +28,23 @@
     //rotate label in 45 degrees
     nameLabel.transform = CGAffineTransformMakeRotation( M_PI/-2 );
     
+    timesArray = [[NSMutableArray alloc] initWithObjects:
+                   @"Monday In: ", monInLabel.text,
+                   @"Monday Out: ", monOutLabel.text,
+                   @"Tuesday In: ", tuesInLabel.text,
+                   @"Tuesday Out: ", tuesOutLabel.text,
+                   @"Wednesday In: ", wedInLabel.text,
+                   @"Wednesday Out: ", wedOutLabel.text,
+                   @"Thursday In: ", thursInLabel.text,
+                   @"Thursday Out: ", thursOutLabel.text,
+                   @"Friday In: ", friInLabel.text,
+                   @"Friday Out: ", friOutLabel.text,
+                   @"Saturday In: ", satInLabel.text,
+                   @"Saturday Out: ", satOutLabel.text,
+                   @"Sunday In: ", sunInLabel.text,
+                   @"Sunday Out: ", sunOutLabel.text,
+                   nil];
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -51,10 +68,10 @@
 
 -(IBAction)onShare:(UIButton*)button
 {
-    UIImage *myTimecard = [UIImage imageNamed:@"TimecarBackgroundNew.png"];
-    NSArray *timecardArray = [NSArray arrayWithObjects:@"Here is my timecard for the week.", myTimecard, nil];
+    //UIImage *myTimecard = [UIImage imageNamed:@"TimecarBackgroundNew.png"];
+    //NSArray *timecardArray = [NSArray arrayWithObjects:@"Here is my timecard for the week.", myTimecard, nil];
     //share
-    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:timecardArray applicationActivities:nil];
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:timesArray applicationActivities:nil];
     [self presentViewController:controller animated:YES completion:nil];
 }
 
